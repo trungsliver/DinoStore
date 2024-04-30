@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Blog</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="overlay" onclick="hideOverlay()"></div>
+    <div class="popup__size" id="container_size">
+        <img src="./Images/size.png" id="image_size" alt="img">
+    </div>
+    <header>
+        <div class="header__desktop">
+            <div class="container">
+                <div class="header__desktop--wrap">
+                    <div class="logo">
+                        <img src="Images/logo.png">
+                    </div>
+                    <div class="menu">
+                        <li><a href="trangchu-dadangnhap.html">TRANG CHỦ</a></li>
+                        <li><a href="sanpham.html">SẢN PHẨM</a></li>
+                        <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                        <li><a href="blog.html" id="active-menu">BLOG</a></li>
+                    </div>
+                    <div class="others">
+                        <li class="search">
+                            <input type="text" placeholder="Tìm kiếm" onkeydown="checkEnter(event)">
+                            <img src="./Images/icon_search.svg" alt="img" onclick="search()">
+                        </li>
+                        <li class="icon avatar">
+                            <img src="./Images/header-avatar.svg" alt="img">
+                            <div class="connect"></div>
+                            <a href="index.html" class="logout">
+                                <p class="">Đăng xuất</p>
+                                <img src="./Images/icon_logout.svg" alt="img">
+                            </a>
+                        </li>
+                        <li class="icon"><a href="giohang.html"><img src="./Images/icon_cart.svg" alt="img"></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__mobile">
+            <div class="header__mobile--menubar" onclick="showMenu()">
+                <img src="./Images/menu-bar.svg" alt="img">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="header__mobile--logo">
+                <img src="./Images/logo.png">
+            </div>
+            <div class="header__mobile--function">
+                <a href="giohang.html" class="function__cart">
+                    <img src="./Images/icon_cart.svg" alt="img">
+                </a>
+            </div>
+        </div>
+        <div class="header__menu">
+            <div class="header__avatar">
+                <img src="./Images/header-avatar.svg" alt="img">
+                <p class="">Đức Thọ</p>
+            </div>
+            <div class="header__menu--search">
+                <img src="./Images/icon_search.svg" alt="img" onclick="search()">
+                <input type="text" placeholder="Tìm kiếm" onkeydown="checkEnter(event)">
+            </div>
+            <ul class="header__menu--list">
+                <li><a href="trangchu-dadangnhap.html">Trang chủ</a></li>
+                <li><a href="sanpham.html">Sản phẩm</a></li>
+                <div class="list__item"><a href="sanpham_ao.html">Áo</a></div>
+                <div class="list__item"><a href="sanpham_quan.html">Quần</a></div>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><p onclick="showSize()">Bảng size</p></li>
+                <li><a href="index.html" class="logout__active">Đăng xuất</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BLOG CONTAINER -->
+    <main>
+        <div class="container">
+            <!-- ĐƯỜNG DẪN -->
+            <div class="breadcrumb">
+                <a href="./trangchu-dadangnhap.html" class="breadcrumb__sub-page">trang chủ </a>
+                <a href="./blog.html" class="breadcrumb-page">Blog</a>
+            </div>
+            <!-- BLOG -->
+            <div class="blog">
+                <div class="blog-title-mobile">blog</div>
+                <div class="blog-main">
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog1.png"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Những gam màu không thể thiếu trong dịp tết giáp thìn
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Màu sắc của trang phục là một trong những yếu tố rất quan trọng. Đây không chỉ là yếu tố tạo được điểm nhấn, sự khác biệt mà còn là ngôn...
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">28/01/2024</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog2.jpeg"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Mix áo thun oversize chuẩn phong cách với 5 tips ấn tượng
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Áo phông oversize đang là một hot item dẫn đầu  xu hướng thời trang giới trẻ hiện nay. Ngày càng nhiều các bạn trẻ yêu thích, ưa chuộng và....
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">24/01/2024</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog3.jpeg"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Cách để genz thể hiện bản thân họ thông qua thời trang
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Gen Z là thế hệ trẻ đầy sáng tạo và thể hiện bản thân của họ thông qua thời trang. Họ thích sử dụng những màu sắc nổi bật, phong cách độc...
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">26/11/2023</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog4.jpeg"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Trang phục nhàu nhĩ nhăn nhúm mốt hot xuân hè 2023
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Trang phục nhàu nhĩ nhăn nhúm được xem là mốt hot của mùa Xuân Hè 2023, thay vì là lượt phẳng phiu. Nhiều người không có thói quen là quần áo chắc....
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">12/03/2023</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog5.jpeg"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Áo blazer không thể thiếu dành cho mùa thu
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Cân nhắc tới combo gồm áo blazer màu be với một chiếc quần jeans hay chân váy ngắn là lựa chọn không thể thiếu của các cô gái nào thích sự trẻ trung...
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">18/07/2022</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./chitietblog.html" class="blog-main__item">
+                        <img class="blog-main__item--image" src="./Images/blog6.jpeg"/>
+                        <div class="blog-main__item--content">
+                            <div class="blog-main__item-content--title">
+                                Chọn trang phục gì để vừa trẻ trung vừa thanh lịch
+                            </div>
+                            <div class="blog-main__item-content--subtitle">
+                                Lựa chọn trang phục luôn khiến nhiều chị em “đau đầu” để làm thế nào cho vừa thoải mái, vừa phù hợp, vừa fashion luôn là những vấn đề nan giải...
+                            </div>
+                            <div class="blog-main__item-content--footer">
+                                <div class="blog-main__item-content-footer--date">
+                                    <img src="./Images/i-calendar.png"/>
+                                    <div class="blog-main__item-content-footer--date-title">22/05/2022</div>
+                                </div>
+                                <div class="blog-main__item-content-footer--button">xem thêm</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-submain">
+                    <div class="blog-submain__title">Bài viết mới</div>
+                    <div class="blog-submain__content">
+                        <div class="blog-submain__content-item">
+                            <img class="blog-submain__content-item--image" src="./Images/blog1.png"/>
+                            <div class="blog-submain__content-item--content">
+                                <div class="blog-submain__content-item--content-title">
+                                    Những gam màu không thể thiếu trong dịp tết giáp thìn
+                                </div>
+                                <div class="blog-submain__content-item--content-subtitle">
+                                    Màu sắc của trang phục là một trong những yếu tố rất quan trọng. Đây không chỉ...
+                                </div>
+                                <div class="blog-submain__content-item--content-date">
+                                    <img class="blog-submain__content-item--content-date--image" src="./Images/i-calendar.png"/>
+                                    <div class="blog-submain__content-item--content-date--title">28/01/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-submain__content-item">
+                            <img class="blog-submain__content-item--image" src="./Images/blog2.jpeg"/>
+                            <div class="blog-submain__content-item--content">
+                                <div class="blog-submain__content-item--content-title">
+                                    Mix áo thun oversize chuẩn phong cách với 5 tips ấn tượng
+                                </div>
+                                <div class="blog-submain__content-item--content-subtitle">
+                                    Áo phông oversize đang là một hot item  dẫn đầu xu hướng thời trang giới trẻ hiện...
+                                </div>
+                                <div class="blog-submain__content-item--content-date">
+                                    <img class="blog-submain__content-item--content-date--image" src="./Images/i-calendar.png"/>
+                                    <div class="blog-submain__content-item--content-date--title">24/01/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-submain__content-item">
+                            <img class="blog-submain__content-item--image" src="./Images/blog3.jpeg"/>
+                            <div class="blog-submain__content-item--content">
+                                <div class="blog-submain__content-item--content-title">
+                                    Cách để genz thể hiện bản thân họ thông qua thời trang
+                                </div>
+                                <div class="blog-submain__content-item--content-subtitle">
+                                    Gen Z là thế hệ trẻ đầy sáng tạo và thể hiện bản thân của họ thông qua thời trang. Họ...
+                                </div>
+                                <div class="blog-submain__content-item--content-date">
+                                    <img class="blog-submain__content-item--content-date--image" src="./Images/i-calendar.png"/>
+                                    <div class="blog-submain__content-item--content-date--title">26/11/2023</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- PAGINATION -->
+             <div class="blog-pagination pagination">
+                <div class="pagination-item pagination-item-active">
+                    1
+                </div>
+                <div class="pagination-item">
+                    2
+                </div>
+                <div class="pagination-item">
+                    3
+                </div>
+                <div class="pagination-item-arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="col1">
+                    <img src="Images/logo.png" alt="">
+                    <div class="col-flex">
+                        <img src="./Images/icon-address.svg" alt="img">
+                        <p>15 Đường Y, Ngõ 86 Thị trấn Trâu quỳ, <br>
+                            Gia Lâm, Hà Nội</p>
+                    </div>
+                    <div class="col-flex">
+                        <img src="./Images/icon-phone.svg" alt="img">
+                        <p>090.327.1000</p>
+                    </div>
+                    <div class="col-flex">
+                        <img src="./Images/icon-massage.svg" alt="img">
+                        <p>quyet.dino@gmail.com</p>
+                    </div>
+                    <img src="Images/logo_bct.webp">
+                </div>
+                <div class="col23">
+                    <ul class="info">
+                        <div class="footer__title">CHÚNG TÔI</div>
+                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="">Sản phẩm</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Kiểm tra đơn hàng</a></li>
+                        <li><a href="">Giới thiệu</a></li>
+                    </ul>
+
+                    <ul class="info">
+                        <div class="footer__title">CHÍNH SÁCH</div>
+                        <li><a href="">Chính sách mua hàng</a></li>
+                        <li><a href="">Chính sách bảo mật<a></li>
+                        <li><a href="">Phương thức thanh toán</a></li>
+                        <li><a href="">Chính sách vận chuyển</a></li>
+                        <li><a href="">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="col4">
+                    <img src="Images/map.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>

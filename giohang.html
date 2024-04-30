@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sản phẩm</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="overlay" onclick="hideOverlay()"></div>
+    <div class="popup__size" id="container_size">
+        <img src="./Images/size.png" id="image_size" alt="img">
+    </div>
+    <header>
+        <div class="header__desktop">
+            <div class="container">
+                <div class="header__desktop--wrap">
+                    <div class="logo">
+                        <img src="Images/logo.png">
+                    </div>
+                    <div class="menu">
+                        <li><a href="trangchu-dadangnhap.html">TRANG CHỦ</a></li>
+                        <li><a href="sanpham.html">SẢN PHẨM</a></li>
+                        <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                    </div>
+                    <div class="others">
+                        <li class="search">
+                            <input type="text" placeholder="Tìm kiếm" onkeydown="checkEnter(event)">
+                            <img src="./Images/icon_search.svg" alt="img" onclick="search()">
+                        </li>
+                        <li class="icon avatar">
+                            <img src="./Images/header-avatar.svg" alt="img">
+                            <div class="connect"></div>
+                            <a href="index.html" class="logout">
+                                <p class="">Đăng xuất</p>
+                                <img src="./Images/icon_logout.svg" alt="img">
+                            </a>
+                        </li>
+                        <li class="icon"><a href="giohang.html"><img src="./Images/icon_cart.svg" alt="img"></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__mobile">
+            <div class="header__mobile--menubar" onclick="showMenu()">
+                <img src="./Images/menu-bar.svg" alt="img">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="header__mobile--logo">
+                <img src="./Images/logo.png">
+            </div>
+            <div class="header__mobile--function">
+                <a href="giohang.html" class="function__cart">
+                    <img src="./Images/icon_cart.svg" alt="img">
+                </a>
+            </div>
+        </div>
+        <div class="header__menu">
+            <div class="header__avatar">
+                <img src="./Images/header-avatar.svg" alt="img">
+                <p class="">Đức Thọ</p>
+            </div>
+            <div class="header__menu--search">
+                <img src="./Images/icon_search.svg" alt="img" onclick="search()">
+                <input type="text" placeholder="Tìm kiếm" onkeydown="checkEnter(event)">
+            </div>
+            <ul class="header__menu--list">
+                <li><a href="trangchu-dadangnhap.html">Trang chủ</a></li>
+                <li><a href="sanpham.html">Sản phẩm</a></li>
+                <div class="list__item"><a href="sanpham_ao.html">Áo</a></div>
+                <div class="list__item"><a href="sanpham_quan.html">Quần</a></div>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><p onclick="showSize()">Bảng size</p></li>
+                <li><a href="index.html" class="logout__active">Đăng xuất</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-gray main-gray-mobile">
+        <div class="container">
+            <!-- ĐƯỜNG DẪN -->
+            <div class="breadcrumb">
+                <a href="./trangchu-dadangnhap.html" class="breadcrumb__sub-page">trang chủ </a>
+                <a href="./giohang.html" class="breadcrumb-page">giỏ hàng</a>
+            </div>
+            <!-- NỘI DUNG -->
+            <div class="cart">
+                <div class="cart-title">Giỏ hàng của bạn</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="cart-header-product-info">
+                                Thông tin sản phẩm
+                            </td>
+                            <td class="cart-header-price">
+                                Đơn giá
+                            </td>
+                            <td class="cart-header-qty">
+                                Số lượng
+                            </td>
+                            <td class="cart-header-total">
+                                Thành tiền
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cart-info-product">
+                                <img class="cart-info-product__image" src="./Images/ao10.png" />
+                                <div class="cart-info-product__content">
+                                    <div class="cart-info-product__content-name">
+                                        Áo Polo Washed Teelab Local Brand Unisex Logo AP025
+                                    </div>
+                                    <div class="cart-info-product__content-size">
+                                        Wash/L
+                                    </div>
+                                    <div class="cart-info-product__content-action">
+                                        Xóa
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cart-price">
+                                200.000đ
+                            </td>
+                            <td class="cart-qty">
+                                <div class="cart-qty-wrapper">
+                                    <button onclick="decreaseValue()" class="minus">
+                                        -
+                                    </button>
+                                    <input type="number" value="1" min="1" max="100">
+                                    <button onclick="increaseValue()" class="plus">
+                                        +
+                                    </button>
+                                </div>
+                            </td>
+                            <td class="cart-total-price">
+                                200.000đ
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="cart-product-mobile">
+                    <img class="cart-info-product-mobile__image" src="./Images/ao10.png" />
+                    <div class="cart-info-product-mobile__content">
+                        <div class="cart-info-product-mobile__content--title">
+                            Áo Polo Washed Teelab Local Brand Unisex Logo AP025
+                        </div>
+                        <div class="cart-info-product-mobile__content--size">
+                            Wash/L
+                        </div>
+                        <div class="cart-info-product-mobile__content--footer">
+                            <div class="cart-info-product-mobile__content--footer-size">200.000đ</div>
+                            <div class="cart-qty-wrapper">
+                                <button onclick="decreaseValue()" class="minus">
+                                    -
+                                </button>
+                                <input type="number" value="1" min="1" max="100">
+                                <button onclick="increaseValue()" class="plus">
+                                    +
+                                </button>
+                            </div>
+                            <div class="cart-info-product-mobile__content--footer-delete">Xóa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-footer__total-price">
+                        <div class="cart-footer__total-price--title">
+                            Tổng tiền:
+                        </div>
+                        <div class="cart-footer__total-price--price">
+                            200.000đ
+                        </div>
+                    </div>
+                    <a href="./thanhtoan.html" class="cart-footer__button">Thanh toán</a>
+                </div>
+            </div>
+            <!-- CHÍNH SÁCH -->
+            <div class="policy">
+                <div class="policy-item">
+                    <div class="policy-item__image">
+                        <img src="./Images/i-money-hand.png" />
+                    </div>
+                    <div class="policy-item__content">
+                        <div class="policy-item__content--title">
+                            Thanh toán khi nhận hàng(COD)
+                        </div>
+                        <div class="policy-item__content--subtitle">
+                            Giao hàng toàn quốc
+                        </div>
+                    </div>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-item__image">
+                        <img src="./Images/i-shipping-fast.png" />
+                    </div>
+                    <div class="policy-item__content">
+                        <div class="policy-item__content--title">
+                            Miễn phí giao hàng
+                        </div>
+                        <div class="policy-item__content--subtitle">
+                            Đơn hàng trên 599.000đ
+                        </div>
+                    </div>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-item__image">
+                        <img src="./Images/i-shippingbox.png" />
+                    </div>
+                    <div class="policy-item__content">
+                        <div class="policy-item__content--title">
+                            Đổi trả miễn phí
+                        </div>
+                        <div class="policy-item__content--subtitle">
+                            3 ngày từ ngày nhận hàng
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="col1">
+                    <img src="Images/logo.png" alt="">
+                    <div class="col-flex">
+                        <img src="./Images/icon-address.svg" alt="img">
+                        <p>15 Đường Y, Ngõ 86 Thị trấn Trâu quỳ, <br>
+                            Gia Lâm, Hà Nội</p>
+                    </div>
+                    <div class="col-flex">
+                        <img src="./Images/icon-phone.svg" alt="img">
+                        <p>090.327.1000</p>
+                    </div>
+                    <div class="col-flex">
+                        <img src="./Images/icon-massage.svg" alt="img">
+                        <p>quyet.dino@gmail.com</p>
+                    </div>
+                    <img src="Images/logo_bct.webp">
+                </div>
+                <div class="col23">
+                    <ul class="info">
+                        <div class="footer__title">CHÚNG TÔI</div>
+                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="">Sản phẩm</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Kiểm tra đơn hàng</a></li>
+                        <li><a href="">Giới thiệu</a></li>
+                    </ul>
+
+                    <ul class="info">
+                        <div class="footer__title">CHÍNH SÁCH</div>
+                        <li><a href="">Chính sách mua hàng</a></li>
+                        <li><a href="">Chính sách bảo mật<a></li>
+                        <li><a href="">Phương thức thanh toán</a></li>
+                        <li><a href="">Chính sách vận chuyển</a></li>
+                        <li><a href="">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="col4">
+                    <img src="Images/map.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function increaseValue() {
+            var value = parseInt(document.querySelector('input[type=number]').value, 10);
+            value = isNaN(value) ? 1 : value;
+            value++;
+            document.querySelector('input[type=number]').value = value;
+        }
+
+        function decreaseValue() {
+            var value = parseInt(document.querySelector('input[type=number]').value, 10);
+            value = isNaN(value) ? 1 : value;
+            value--;
+            document.querySelector('input[type=number]').value = value < 1 ? 1 : value;
+        }
+        const headerMenu = document.querySelector('.header__menu')
+        const overlay = document.querySelector('.overlay')
+        const headerMobileMenubar = document.querySelector('.header__mobile--menubar')
+        const showMenu = () => {
+            overlay.classList.toggle('show')
+            headerMenu.classList.toggle('show')
+            headerMobileMenubar.classList.toggle('show')
+        }
+
+        const hideOverlay = () => {
+            overlay.classList.remove('show')
+            headerMenu.classList.remove('show')
+            headerMobileMenubar.classList.remove('show')
+        }
+
+        const showSize = () => {
+            const popupSize = document.querySelector('.popup__size')
+            popupSize.classList.add('show')
+        }
+
+        document.getElementById("container_size")?.addEventListener("click", function (event) {
+            const popupSize = document.querySelector('.popup__size')
+            if (event.target.id === "image_size") {
+                event.stopPropagation();
+            } else {
+                popupSize.classList.remove('show')
+            }
+        });
+
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                window.location.href = 'timkiem.html'
+            }
+        }
+
+        function search() {
+            window.location.href = 'timkiem.html'
+        }
+    </script>
+</body>
+
+</html>
