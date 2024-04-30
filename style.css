@@ -2415,9 +2415,8 @@ footer {
   font-weight: 700;
   background-color: #000;
   color: white;
-  width: 380px;
+  width: 100%;
   height: 50px;
-  margin: 0 auto;
   display: block;
   border: none;
   border-radius: 5px;
